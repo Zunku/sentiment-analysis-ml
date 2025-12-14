@@ -1,0 +1,6 @@
+mlflow
+numpy==1.23.5
+pandas
+cloudpickle
+nltk
+scikit-learn

@@ -1,0 +1,16 @@
+name: sentiment-analysis-env3
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - scikit-learn
+    - pandas
+    - numpy
+    - nltk
+    - joblib
+    - azureml-mlflow
+    - matplotlib
+    - azure-ai-ml
+    - azure-identity

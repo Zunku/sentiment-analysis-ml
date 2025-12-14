@@ -36,3 +36,10 @@ def predict_sentiment(text: str) -> tuple[str, float]:
         return "Negative", proba[0][0]
     else:
         return "Positive", proba[0][1]
+    
+print(predict_sentiment("Este produto é ótimo! Adorei a qualidade e o preço foi justo."))  # Expected: ("Positive", probability)
+
+# Me salio el mismo error de que no se encuentra el modulo utils (elimine los imports que habian al inicio, cuando los corria en local no habia problema)
+# Quizas haya que restaurar los imports o que el docker tenga un archivo launch.json
+# Igual gpt me dio una solucion
+# Descansa!!! Te lo ganaste :)))))))

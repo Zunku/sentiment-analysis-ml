@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: sentiment_classifier
+display_name: Train the final sentiment classifier model
+version: 3.2
+type: command
+inputs:
+    training_data:
+        type: uri_folder
+    model_input:
+        type: uri_folder
+outputs:
+    model_output:
+        type: uri_folder
+code: ../
+environment: azureml:sentiment-analysis-env3:14
+command: >-
+    python src/sentiment-classifier.py
+    --training_data ${{inputs.training_data}}
+    --model_input ${{inputs.model_input}}
+    --model_output ${{outputs.model_output}}

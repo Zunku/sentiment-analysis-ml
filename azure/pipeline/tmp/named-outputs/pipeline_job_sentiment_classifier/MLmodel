@@ -1,0 +1,19 @@
+flavors:
+  python_function:
+    cloudpickle_version: 3.1.1
+    code: null
+    loader_module: mlflow.pyfunc.model
+    python_model: python_model.pkl
+    python_version: 3.11.13
+    streamable: false
+is_signature_from_type_hint: false
+mlflow_version: 2.22.2
+model_size_bytes: 42161
+model_uuid: 84b3fb39389e45a4b59fac359a3445a9
+prompts: null
+signature:
+  inputs: '[{"type": "string", "name": "review_comment_message", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-11-06 23:30:18.939078'

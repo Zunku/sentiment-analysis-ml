@@ -1,0 +1,14 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: prep_data
+display_name: Prepare training data
+version: 2.8
+type: command
+inputs:
+    input_data:
+        type: uri_file
+outputs:
+    output_data:
+        type: uri_folder
+code: ../
+environment: azureml:sentiment-analysis-env3@latest
+command: python src/prep-data.py --input_data ${{inputs.input_data}} --output_folder ${{outputs.output_data}}

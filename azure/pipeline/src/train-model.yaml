@@ -1,0 +1,30 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: train_model
+display_name: Train a logistic regression language model
+
+version: 6.5
+type: command
+inputs:
+    training_data:
+        type: uri_folder
+    reg_rate:
+        type: number
+        default: 0.01
+    penalty:
+        type: string
+        default: l1
+    class_weight:
+        type: string
+        default: balanced
+outputs:
+    model_output:
+        type: uri_folder
+code: ../
+environment: azureml:sentiment-analysis-env3:14
+command: >-
+    python src/train-model.py
+    --training_data ${{inputs.training_data}}
+    --reg_rate ${{inputs.reg_rate}}
+    --penalty ${{inputs.penalty}}
+    --class_weight ${{inputs.class_weight}}
+    --model_output ${{outputs.model_output}}
